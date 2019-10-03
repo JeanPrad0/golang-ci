@@ -1,13 +1,16 @@
 steps:
-  - name: 'gcr.io/cloud-builders/go'
+  - id: 'Executando testes'
+    name: 'gcr.io/cloud-builders/go'
     args: ["test", "-vet=off", "golang-ci"]
     env: ['GOPATH=.']
 
-  - name: 'gcr.io/cloud-builders/go'
+  - id: 'Excutando função de soma'
+    name: 'gcr.io/cloud-builders/go'
     args: ["run", "golang-ci", "main.go"]
     env: ['GOPATH=.']
 
-  - name: 'gcr.io/cloud-builders/docker'
+  - id: 'Publicando imagem'
+    name: 'gcr.io/cloud-builders/docker'
     args: ['build', '--tag=gcr.io/$PROJECT_ID/golang-ci', '.']
 images: ['gcr.io/$PROJECT_ID/golang-ci']
 
