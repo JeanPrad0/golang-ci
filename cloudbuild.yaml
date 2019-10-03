@@ -1,10 +1,17 @@
 steps:
   - name: 'gcr.io/cloud-builders/go'
     args: ["run", "main.go"]
-
+    env: ['GOPATH=/src/golang-ci/']
+    volumes:
+    - name: 'go'
+      path: '/src/golang-ci/'
 
   - name: 'gcr.io/cloud-builders/go'
     args: ["test", "-vet=off"]
+    env: ['GOPATH=/src/golang-ci/']
+    volumes:
+    - name: 'go'
+      path: '/src/golang-ci/'
 
 
 
