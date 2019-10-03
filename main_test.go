@@ -5,8 +5,10 @@ import "testing"
 func TestSum(t *testing.T) {
     got := sum(5,5)
 
-    if got != 10 {
-       return  t.Errorf("Erro na soma", got)
+    want := 10
+
+    if got != want {
+       return  t.Errorf("Erro na soma", got, want)
     }
     return nil
 }
