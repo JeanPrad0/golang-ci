@@ -8,7 +8,7 @@ func TestSum(t *testing.T) {
     want := 10
 
     if got != want {
-       return  t.Errorf("Erro na soma", got, want)
+      t.Errorf("Erro na soma", got, want)
     }
-    return nil
+   
 }
