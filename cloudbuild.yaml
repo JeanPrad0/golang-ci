@@ -4,7 +4,7 @@ steps:
     args: ["test", "-vet=off", "golang-ci"]
     env: ['GOPATH=.']
 
-  - id: 'Excutando função de soma'
+  - id: 'Executando função de soma'
     name: 'gcr.io/cloud-builders/go'
     args: ["run", "golang-ci", "main.go"]
     env: ['GOPATH=.']
