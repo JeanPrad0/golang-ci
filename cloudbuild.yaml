@@ -4,7 +4,7 @@ steps:
     env: ['GOPATH=/src/golang-ci/']
 
   - name: 'gcr.io/cloud-builders/go'
-    args: ["test"]
+    args: ["test", "-vet=off"]
     env: ['GOPATH=/src/golang-ci/']
 
 
