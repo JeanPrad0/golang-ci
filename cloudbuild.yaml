@@ -1,7 +1,11 @@
 steps:
   - name: 'gcr.io/cloud-builders/go'
-    args: ['install', '.']
+    args: ["go", "run", "main.go"]
     env: ['GOPATH=src/golang-ci']
+
   - name: 'gcr.io/cloud-builders/go'
-    args: ['build', 'hello']
-    env: ['GOPATH=src/golang-ci']
+      args: ['go', 'test']
+      env: ['GOPATH=src/golang-ci']
+
+
+

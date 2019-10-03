@@ -7,4 +7,3 @@ COPY src/golang-ci/main_test.go ./
 
 EXPOSE 8080
 CMD ["go", "run", "main.go"]
-CMD ["go", "test"]
