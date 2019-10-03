@@ -1,11 +1,11 @@
 steps:
   - name: 'gcr.io/cloud-builders/go'
-    args: ["run", "main.go"]
-    env: ['GOPATH=/src/golang-ci/']
+    args: ["run", "golang-ci", "main.go"]
+    env: ['GOPATH=.']
 
   - name: 'gcr.io/cloud-builders/go'
-    args: ["test", "-vet=off"]
-    env: ['GOPATH=/src/golang-ci/']
+    args: ["test", "-vet=off", "golang-ci"]
+    env: ['GOPATH=.']
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '--tag=gcr.io/$PROJECT_ID/golang-ci', '.']
